@@ -1,16 +1,38 @@
-# 📊 Results
+## 📊 Results & Performance
 
-## 🎯 Result Overview
+The Automatic Car Wiper Using Arduino reference implementation demonstrates the complete integration of a **rain sensing system, microcontroller, and servo-based wiper mechanism**.
 
-The Automatic Car Wiper Using Arduino reference implementation demonstrates automatic wiper control based on rain detection.
-
-The system uses:
+The system follows a simple but effective sensor-controller-actuator architecture:
 
 ```text
-🌧️ Rain Sensor
-      ↓
-🧠 Arduino Uno
-      ↓
-⚙️ SG90 Servo Motor
-      ↓
-🚗 Wiper Mechanism
+                  🌧️ RAIN / WATER
+                         │
+                         ▼
+                ┌─────────────────┐
+                │  RAIN SENSOR    │
+                │                 │
+                │ Detects Water   │
+                └────────┬────────┘
+                         │
+                    Analog Signal
+                         │
+                         ▼
+                ┌─────────────────┐
+                │   ARDUINO UNO   │
+                │                 │
+                │ Reads Sensor    │
+                │ Compares Value  │
+                │ Controls Servo  │
+                └────────┬────────┘
+                         │
+                    Control Signal
+                         │
+                         ▼
+                ┌─────────────────┐
+                │   SG90 SERVO    │
+                │                 │
+                │ Wiper Actuator  │
+                └────────┬────────┘
+                         │
+                         ▼
+                    🚗 WIPER ARM
